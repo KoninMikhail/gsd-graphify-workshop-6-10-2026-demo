@@ -106,6 +106,7 @@ h1 {
 
 .composer button,
 .reset,
+.export,
 .danger,
 .drag-handle {
   border: 0;
@@ -113,7 +114,8 @@ h1 {
 }
 
 .composer button,
-.reset {
+.reset,
+.export {
   border-radius: 999px;
   padding: 0.85rem 1.3rem;
   font-weight: 700;
@@ -124,14 +126,16 @@ h1 {
   color: #f4fff8;
 }
 
-.reset {
+.reset,
+.export {
   background: transparent;
   color: var(--ink);
   border: 1px solid var(--line);
 }
 
 .composer button:disabled,
-.reset:disabled {
+.reset:disabled,
+.export:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }

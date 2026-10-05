@@ -25,3 +25,15 @@ export function buildTaskReport(tasks: Task[]): string {
   const sections = TASK_STATUSES.map((status) => formatSection(status, tasks));
   return `# Task Board\n\n${sections.join("\n\n")}\n`;
 }
+
+export function downloadTaskReport(tasks: Task[]): void {
+  const blob = new Blob([buildTaskReport(tasks)], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "task-board.md";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}

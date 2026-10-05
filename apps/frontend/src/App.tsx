@@ -20,6 +20,7 @@ import {
 import * as api from "./api";
 import { Column } from "./components/Column";
 import { TaskCard } from "./components/TaskCard";
+import { downloadTaskReport } from "./report";
 
 function groupByStatus(tasks: Task[]): Record<TaskStatus, Task[]> {
   const grouped: Record<TaskStatus, Task[]> = {
@@ -282,6 +283,16 @@ export function App() {
             disabled={loading || saving}
           >
             Reset demo
+          </button>
+          <button
+            type="button"
+            className="export"
+            onClick={() => {
+              downloadTaskReport(tasks);
+            }}
+            disabled={loading || saving}
+          >
+            Export markdown
           </button>
         </div>
       </header>
