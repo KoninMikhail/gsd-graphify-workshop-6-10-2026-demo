@@ -35,7 +35,7 @@
 - npm workspaces + Turborepo 2.11.7 (range `^2.5.4`) — task graph in root `package.json` and `turbo.json`
 
 **Testing:**
-- None. No `test` script, no `*.test.*` / `*.spec.*` files, no Vitest, Jest, or Playwright dependency. `npm run lint` and `npm run typecheck` both run `tsc --noEmit`
+- Vitest 5.0.3 in `@repo/frontend` (`vitest run`). Root `npm test` is `turbo run test` (`dependsOn: ["^build"]`). Config: `apps/frontend/vitest.config.ts` (`environment: node`, `src/**/*.test.ts`). First suite: `apps/frontend/src/report.test.ts`. Backend and shared still have no test script. `npm run lint` and `npm run typecheck` both run `tsc --noEmit`
 
 **Build/Dev:**
 - TypeScript 5.9.3 — `tsc` builds `@repo/shared` and `@repo/backend` to `dist/`; frontend typecheck is `tsc --noEmit` before `vite build`

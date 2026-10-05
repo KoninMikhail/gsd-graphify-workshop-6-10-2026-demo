@@ -139,7 +139,7 @@ gsd-graphify-workshop/
 
 **Testing:**
 
-- No test files, no `tests/` directory, no `*.test.*` or `*.spec.*`, no test script in root or workspace `package.json`
+- Frontend tests live next to source: `apps/frontend/src/report.test.ts`. Root script `npm test` runs `turbo run test`. Backend and shared still have no tests
 - `lint` in each workspace is `tsc --noEmit` (frontend build also typechecks before `vite build`)
 
 **Documentation:**
@@ -192,7 +192,7 @@ gsd-graphify-workshop/
 - Handler: `apps/backend/src/index.ts`. Register a literal path such as `/tasks/<action>` before `GET /tasks/:id`
 - Query or write: a new exported function in `apps/backend/src/db.ts`
 - Client: a named function next to the others in `apps/frontend/src/api.ts`, using the private `request` helper
-- Tests: no suite exists. Do not add a runner or `*.test.ts` files as part of a feature unless the phase introduces one
+- Tests: frontend Vitest suite is `apps/frontend/src/*.test.ts`. Add a test in that pattern when a phase asks for one. Backend still has no runner
 
 **New board interaction:**
 

@@ -5,12 +5,12 @@
 ## Test Framework
 
 **Runner:**
-- Not detected. No Jest, Vitest, Node test runner, Playwright, or Cypress dependency in the root `package.json`, `apps/backend/package.json`, `apps/frontend/package.json`, or `packages/shared/package.json`
-- No `vitest.config.*`, `jest.config.*`, or `playwright.config.*`
-- No `test` script in any workspace
+- Vitest 5.0.3 in `@repo/frontend`. Config: `apps/frontend/vitest.config.ts` (`environment: node`, include `src/**/*.test.ts`)
+- Root script `test` is `turbo run test`. Only the frontend workspace defines `test` (`vitest run`)
+- Backend and `@repo/shared` still have no test script. No Playwright or Cypress
 
 **Assertion Library:**
-- Not detected. There is no `expect`, `assert`, or `it(` / `describe(` usage under `apps/` or `packages/`
+- Vitest `expect` / `describe` / `it` in `apps/frontend/src/report.test.ts`
 
 **Run Commands:**
 ```bash
@@ -18,9 +18,10 @@ npm run typecheck          # tsc --noEmit in each workspace that defines the scr
 npm run lint               # same tsc --noEmit; not a linter
 npm run build              # turbo build: shared + backend emit dist, frontend vite build
 npm run dev                # manual board check at http://localhost:5173
+npm test                   # turbo run test; frontend vitest run
 ```
 
-`npm test` is not defined. Do not invent a watch or coverage script.
+Do not add a watch or coverage script unless a phase asks for one.
 
 `typecheck` and `lint` are wired in `turbo.json` with `dependsOn: ["^build"]`. From the repo root, Turbo builds `@repo/shared` before typechecking `@repo/backend` and `@repo/frontend`, because those packages import `@repo/shared` from `packages/shared/dist` (`packages/shared/package.json` `exports`).
 
@@ -36,7 +37,7 @@ npm run build -w @repo/frontend
 ## Test File Organization
 
 **Location:**
-- No test files. Searched for `*.test.*` and `*.spec.*`: none
+- `apps/frontend/src/report.test.ts` covers `buildTaskReport`. No other `*.test.*` / `*.spec.*` yet
 - No `tests/`, `__tests__/`, `e2e/`, or `apps/*/test` directory
 - Source under test, when tests are added later, is:
   - `apps/backend/src/db.ts` — SQLite CRUD, seed, reorder

@@ -9,7 +9,7 @@
 - lowercase for non-component modules: `apps/frontend/src/api.ts`, `apps/frontend/src/main.tsx`, `apps/backend/src/db.ts`, `apps/backend/src/index.ts`
 - Shared contract is a single module: `packages/shared/src/index.ts`
 - CSS lives in one file: `apps/frontend/src/styles.css`. Class names are kebab-case (`task-overlay`, `column-header`, `drag-handle`). Custom properties are kebab-case (`--bg-accent`)
-- No `*.test.ts` / `*.spec.ts` files exist
+- Frontend unit tests are `apps/frontend/src/*.test.ts`, run by Vitest (`apps/frontend/src/report.test.ts`)
 
 **Functions:**
 - camelCase for all functions (`listTasks`, `groupByStatus`, `persistBoard`, `fetchTasks`)
