@@ -98,29 +98,29 @@
 
 ## Traceability
 
-Таблица заполняется вместе с роадмапом. До этого фазы не назначены.
+Каждое требование v1 назначено ровно одной фазе. Статус Pending: файл в дереве не закрывает пункт.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| MAP-01 | — | Pending |
-| PROJ-01 | — | Pending |
-| CFG-01 | — | Pending |
-| CFG-02 | — | Pending |
-| RES-01 | — | Pending |
-| RES-02 | — | Pending |
-| RES-03 | — | Pending |
-| REQ-01 | — | Pending |
-| ROAD-01 | — | Pending |
-| ROAD-02 | — | Pending |
-| STATE-01 | — | Pending |
-| SNAP-01 | — | Pending |
-| GIT-01 | — | Pending |
+| MAP-01 | Phase 1 | Pending |
+| PROJ-01 | Phase 1 | Pending |
+| CFG-01 | Phase 1 | Pending |
+| CFG-02 | Phase 1 | Pending |
+| RES-01 | Phase 2 | Pending |
+| RES-02 | Phase 2 | Pending |
+| RES-03 | Phase 2 | Pending |
+| REQ-01 | Phase 3 | Pending |
+| ROAD-01 | Phase 4 | Pending |
+| ROAD-02 | Phase 4 | Pending |
+| STATE-01 | Phase 4 | Pending |
+| SNAP-01 | Phase 4 | Pending |
+| GIT-01 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-10-05*
-*Last updated: 2026-10-05 after initialization research*
+*Last updated: 2026-10-05 after roadmap*
