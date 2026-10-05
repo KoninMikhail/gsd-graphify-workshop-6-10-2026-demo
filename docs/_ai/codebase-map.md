@@ -1,13 +1,15 @@
 # Codebase map
 
-Исходники приложения — TypeScript. Тестовых файлов `*.test.*` / `*.spec.*` в репозитории нет.
+Исходники приложения — TypeScript. Unit-тесты frontend: `apps/frontend/src/*.test.ts` (сейчас `report.test.ts`). Backend и shared без тестов.
 
 ## Frontend — `apps/frontend/src`
 
 | Файл | Роль |
 | --- | --- |
 | `main.tsx` | `createRoot` на `#root`, `StrictMode`, импорт `styles.css` |
-| `App.tsx` | Состояние доски, drag-and-drop, создание, удаление, reset |
+| `App.tsx` | Состояние доски, drag-and-drop, создание, удаление, reset, кнопка Export markdown |
+| `report.ts` | Сборка и скачивание `task-board.md` из задач на экране |
+| `report.test.ts` | Vitest: секции, описание, пустая колонка, порядок `position` |
 | `api.ts` | `fetch` на префикс `/api` |
 | `components/Column.tsx` | Колонка-droppable, `SortableContext` |
 | `components/SortableTask.tsx` | Обёртка `useSortable` |

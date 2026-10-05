@@ -24,7 +24,7 @@
 | --- | --- |
 | [search-index.md](./search-index.md) | Ключевое слово → файл |
 | [workflow.md](./workflow.md) | `npm` / Turbo-скрипты |
-| [testing.md](./testing.md) | Проверки; автотестов нет |
+| [testing.md](./testing.md) | Проверки; vitest во frontend |
 | [ecosystem-context.md](./ecosystem-context.md) | Один репозиторий |
 | [infra-context.md](./infra-context.md) | Локальный процесс и файл SQLite |
 
