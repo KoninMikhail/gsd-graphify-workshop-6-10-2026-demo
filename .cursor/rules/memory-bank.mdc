@@ -1,0 +1,43 @@
+---
+alwaysApply: true
+---
+
+# Memory Bank
+
+Моя память сбрасывается между сессиями. Я ПОЛНОСТЬЮ полагаюсь на Memory Bank для понимания проекта и читаю его перед КАЖДОЙ задачей.
+
+## Расположение
+
+**Memory Bank: `docs/_ai/`** (универсальный вход — `AGENTS.md`).
+
+`docs/_ai/` — сжатый AI-снимок **канбан-демо** `gsd-graphify-workshop`: npm workspaces + Turborepo. Фронтенд — React 19 + Vite (`apps/frontend`, порт 5173, proxy `/api` → `localhost:3001`). Бэкенд — Fastify и sqlite-файл `apps/backend/data/tasks.db` (`node:sqlite`); статусы задач: `todo` | `in_progress` | `done`. Общие TypeScript-типы — `packages/shared`, общий tsconfig — `packages/typescript-config`. Подробная human/ops-дока — `docs/` (см. `docs/README.md`), нумерованные области `docs/00–04/` и ADR в `docs/adr/`. Memory Bank ссылается на неё, а не дублирует. Дополнительно: `AGENTS.md`, `.cursor/skills/*`.
+
+Команды из корня: `npm run dev` | `build` | `lint` | `typecheck`.
+
+## Обязательное чтение (порядок)
+
+| # | Файл | Назначение |
+|---|------|------------|
+| 1 | `docs/_ai/README.md` | Карта memory-bank и связь с `docs/NN-*` |
+| 2 | `docs/_ai/project-brief.md` | Что это за проект, ключевые решения |
+| 3 | `docs/_ai/product-context.md` | Зачем демо, сценарии канбана |
+| 4 | `docs/_ai/tech-stack.md` | Стек, тулинг, env |
+| 5 | `docs/_ai/architecture.md` | Workspaces, слои, паттерны, инварианты |
+| 6 | `docs/_ai/codebase-map.md` | Карта кода, нейминг, как изучать домен задач |
+| 7 | `docs/_ai/data-flow.md` | HTTP → Fastify → sqlite |
+
+Справочники: `docs/_ai/{search-index,workflow,testing,domain-context,domains,infra-context,ecosystem-context}.md`.
+
+## Структура проекта
+
+```
+gsd-graphify-workshop/          → npm workspaces + Turborepo
+├── apps/frontend/              → React 19 + Vite (порт 5173, proxy /api → localhost:3001)
+├── apps/backend/               → Fastify + node:sqlite (apps/backend/data/tasks.db)
+├── packages/shared/            → общие TypeScript-типы
+└── packages/typescript-config/ → общий tsconfig
+```
+
+## Обновление Memory Bank
+
+Обновляю `docs/_ai/` при новых паттернах, существенных изменениях, прояснении контекста и по запросу «update memory bank» (тогда пересматриваю ВСЕ файлы). Архитектурные решения — в `architecture.md` и ADR (при необходимости), не в ephemeral-снимках.

@@ -1,0 +1,10 @@
+---
+description: This demo has no planning phase gate
+alwaysApply: true
+---
+
+# No phase gate
+
+This demo has no `.planning/` directory and no phase execution gate.
+
+Do not apply an external execution contract or a review ritual that is not in this repo. Do not invent a multi-phase process.

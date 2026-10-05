@@ -1,0 +1,55 @@
+---
+description: Дерево docs/ — куда класть онбординг, architecture, reference, ops, ADR, Memory Bank
+globs: docs/**/*
+alwaysApply: false
+---
+
+# Структура `docs/`
+
+Карта каталога — [`docs/README.md`](../../docs/README.md). Сжатый AI-снимок — `docs/_ai/` (rule **`memory-bank.mdc`**).
+
+## Дерево (канон)
+
+| Каталог | Назначение |
+| --- | --- |
+| `docs/_ai/` | Memory Bank для агентов |
+| `docs/00-start/` | Онбординг, local-setup, чеклист |
+| `docs/01-architecture/` | Слои, sqlite, маршруты Fastify, events, policies |
+| `docs/02-tooling/` | npm-скрипты и CI (`ci-and-scripts.md`), graphify (`graphify.md`); стек → `_ai/tech-stack.md` |
+| `docs/03-reference/` | Домен задач, env |
+| `docs/04-ops/` | Runbooks (`runbooks/`), observability, smoke |
+| `docs/adr/` | Repo-level ADR (rule **`adr.mdc`**, skill **`create-adr`**) |
+
+## Куда писать
+
+| Вопрос | Куда |
+| --- | --- |
+| Как начать локально | `00-start/` |
+| Слои, паттерны, инварианты | `01-architecture/` (+ `_ai/architecture.md`) |
+| SQLite, файл `apps/backend/data/tasks.db` | `01-architecture/persistence-and-database.md` |
+| Error handling | `01-architecture/error-handling.md` |
+| Контракт API, маршруты Fastify | `01-architecture/api-design-and-openapi.md` |
+| События, realtime | `01-architecture/events-and-realtime.md` |
+| Cross-cutting policies | `01-architecture/cross-cutting-policies.md` |
+| Почему выбрали подход (trade-offs) | `adr/` |
+| Домен задач (`todo` \| `in_progress` \| `done`) | `03-reference/domains/tasks.md` |
+| Команды npm, CI | `02-tooling/ci-and-scripts.md` |
+| Graphify | `02-tooling/graphify.md` |
+| Аварии / smoke | `04-ops/` (+ `04-ops/runbooks/`) |
+| Сжатый контекст для агента | `_ai/` |
+
+## Anti-patterns
+
+- Новый раздел вне нумерации / `adr/` без обновления `docs/README.md`
+- ADR в `05-decisions/`, корне `docs/*.md` (новые) или `src/**/docs/decisions/`
+- Дублировать Memory Bank в human-гайдах и наоборот — ссылаться, не копировать
+- Плоские runbook'и в корне `docs/` — переносить в `04-ops/runbooks/` (не создавать новые flat-файлы)
+
+## Связанные артефакты
+
+| Артефакт | Роль |
+| --- | --- |
+| `docs/README.md` | человекочитаемая карта |
+| rule `adr.mdc` | gate и формат ADR |
+| rule `memory-bank.mdc` | `docs/_ai/` |
+| rule `readme.mdc` | корневой README репозитория |

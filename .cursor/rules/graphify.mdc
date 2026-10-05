@@ -1,0 +1,49 @@
+---
+description: graphify knowledge graph — query only when graphify-out/graph.json exists
+alwaysApply: true
+---
+
+# Graphify
+
+The knowledge graph is **not built yet**. This repo has no `graphify-out/`.
+
+When the graph is built, the corpus is TypeScript in `apps/` and `packages/`. **Never write graphify outputs under `src/`.** How the graph is meant to be used: `docs/02-tooling/graphify.md`.
+
+Use `graphify query` (and `path` / `explain` / `god-nodes`) **only when `graphify-out/graph.json` exists**. If that file is absent, explore with Read, Grep, and Glob.
+
+## Layout (after the graph exists)
+
+| Path | Purpose |
+| --- | --- |
+| `graphify-out/AGENT_MAP.md` | Orientation: god nodes + labeled communities |
+| `graphify-out/graph.json` | Merged graph (default for query/path/explain) |
+| `graphify-out/GRAPH_REPORT.md` | Audit report |
+| `graphify-out/GRAPH_TREE.html` | Tree viz (full detail) |
+| `graphify-out/layers/<workspace>/` | Per-workspace `graph.json` + `GRAPH_REPORT.md` + `graph.html` |
+
+Workspaces: `apps/frontend`, `apps/backend`, `packages/shared`, `packages/typescript-config`. Staging (gitignored, if used): `graphify-staging/`.
+
+## When `graphify-out/graph.json` exists
+
+For architecture / dependency questions, read `graphify-out/AGENT_MAP.md` first, then:
+
+```bash
+graphify query "<question>"
+graphify path "<A>" "<B>"          # directed; add --undirected if empty
+graphify explain "<concept>"
+graphify god-nodes --top 15
+```
+
+Skip graphify when already oriented and editing exact lines.
+
+## How to read graph signals
+
+- **Hubs** (Fastify route modules, task handlers, React components) — high betweenness often means an architectural hub, not automatically a design smell.
+- **Shared types** in `packages/shared` — the contract between frontend and backend.
+- **Low community cohesion** — hypothesis on a split; verify with `path`/`explain` and the slice code before refactoring.
+
+## Rebuild
+
+This repo has no graphify rebuild script. Do not invent one.
+
+When a graph already exists, refresh it with `graphify update .` (respects `.graphifyignore`). Use `--force` / `GRAPHIFY_FORCE=1` if shrink-guard blocks a deliberate smaller graph.
