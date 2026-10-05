@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-10-05)
 
 **Core value:** Человек открывает снимок и видит, как на уже инициализированном канбане записан первый майлстоун: цель, требования и фазы, без исполненного кода.
-**Current focus:** У трёх фаз есть планы. Исполнение не начато.
+**Current focus:** Проходы трёх фаз собраны. Исполнение не начато: кода, тестов, REVIEW и SUMMARY ещё нет.
 
 ## Current Position
 
 Phase: 1 of 3 (Состав отчёта)
 Plan: 1 of 1 записан, не исполнен
 Status: Планы готовы
-Last activity: 2026-10-05 — планы 01-01, 02-01 и 03-01
+Last activity: 2026-10-05 — к планам добавлены research, validation, patterns и ui-spec
 Progress: [░░░░░░░░░░] 0%
 
 **Current Phase:** 1
@@ -23,8 +23,9 @@ Progress: [░░░░░░░░░░] 0%
 
 **Milestone:** v1.0 Экспорт отчёта в Markdown
 
-Планы: `01-01`, `02-01`, `03-01`. Ни один не исполнен.
-Следующая команда: `/gsd-execute-phase 1`. В этом снимке она не запускалась.
+Планы: `01-01`, `02-01`, `03-01`. Рядом лежат RESEARCH, VALIDATION, PATTERNS и UI-SPEC.
+SUMMARY.md и REVIEW.md появятся после `/gsd-execute-phase`. В этом снимке исполнение не запускалось.
+Следующая команда: `/gsd-execute-phase 1`.
 
 ## Performance Metrics
 

@@ -18,6 +18,8 @@
     "verifier": true,
     "nyquist_validation": true,
     "auto_advance": false,
+    "build_command": "npm run typecheck",
+    "test_command": "npm test",
     "node_repair": true,
     "node_repair_budget": 2,
     "ui_phase": true,
