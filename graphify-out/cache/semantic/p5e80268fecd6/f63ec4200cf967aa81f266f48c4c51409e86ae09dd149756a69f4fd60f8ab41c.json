@@ -1,0 +1,1 @@
+{"nodes": [{"id": "docs_00_start_readme", "label": "Onboarding README", "file_type": "document", "source_file": "docs/00-start/README.md"}], "edges": [{"source": "docs_00_start_readme", "target": "docs_00_start_local_setup", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "docs/00-start/README.md"}], "hyperedges": []}

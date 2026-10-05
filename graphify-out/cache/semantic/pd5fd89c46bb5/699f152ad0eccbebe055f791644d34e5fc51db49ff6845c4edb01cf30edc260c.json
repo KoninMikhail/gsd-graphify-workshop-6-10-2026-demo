@@ -1,0 +1,1 @@
+{"nodes": [{"id": "docs_04_ops_observability", "label": "Observability", "file_type": "document", "source_file": "docs/04-ops/observability.md", "rationale": "Details on logging and monitoring via Fastify logger."}], "edges": [], "hyperedges": []}

@@ -39,7 +39,7 @@
 | Ops | [04-ops](../04-ops/README.md), [observability](../04-ops/observability.md), [runbooks](../04-ops/runbooks/README.md) |
 | ADR | [docs/adr](../adr/README.md) |
 
-В репозитории нет каталогов `graphify-out/` и `.planning/`.
+Граф знаний лежит в `graphify-out/`. Каталога `.planning/` нет.
 
 ## Актуальность
 

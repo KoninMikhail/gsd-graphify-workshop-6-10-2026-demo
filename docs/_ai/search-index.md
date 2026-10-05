@@ -28,7 +28,8 @@
 | планировщики | Фоновых заданий нет | [schedulers](../01-architecture/schedulers-and-jobs.md) |
 | внешние API | Кроме шрифтов Google в `index.html` интеграций нет | [integrations](../01-architecture/integrations.md) |
 | CI, Docker, деплой | В репозитории не описаны | [infra-context.md](./infra-context.md), [ci-and-scripts](../02-tooling/ci-and-scripts.md), [observability](../04-ops/observability.md) |
-| graphify-out, `.planning/` | Каталогов нет | [graphify](../02-tooling/graphify.md), [project-brief.md](./project-brief.md) |
+| graphify-out | Граф собран | [graphify](../02-tooling/graphify.md), [GRAPH_REPORT.md](../../graphify-out/GRAPH_REPORT.md) |
+| `.planning/` | Каталога нет | [project-brief.md](./project-brief.md) |
 | политики | Отдельного слоя политик нет; проверки — в `db.ts` | [policies](../01-architecture/cross-cutting-policies.md) |
 
 ## Оглавления

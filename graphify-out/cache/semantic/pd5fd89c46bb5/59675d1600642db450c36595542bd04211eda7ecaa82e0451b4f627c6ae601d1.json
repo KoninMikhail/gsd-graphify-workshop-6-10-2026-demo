@@ -1,0 +1,1 @@
+{"nodes": [{"id": "docs_ai_architecture", "label": "System Architecture", "file_type": "document", "source_file": "docs/_ai/architecture.md", "rationale": "Describes the monorepo structure and package dependencies."}], "edges": [], "hyperedges": []}

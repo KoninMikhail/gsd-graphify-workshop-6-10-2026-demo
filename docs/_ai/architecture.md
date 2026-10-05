@@ -24,6 +24,6 @@ gsd-graphify-workshop/
 
 ## Чего в репозитории нет
 
-Аутентификации, OpenAPI-файла, очередей, планировщиков, WebSocket/SSE, миграционного инструмента и каталога `graphify-out/`. Ошибки API — JSON `{ error: string }` и коды 400 / 404 / 204, без общего обработчика.
+Аутентификации, OpenAPI-файла, очередей, планировщиков, WebSocket/SSE и миграционного инструмента. Граф знаний собран в `graphify-out/`. Ошибки API — JSON `{ error: string }` и коды 400 / 404 / 204, без общего обработчика.
 
 См. [data-flow.md](./data-flow.md), [persistence](../01-architecture/persistence-and-database.md), [API](../01-architecture/api-design-and-openapi.md), [auth](../01-architecture/auth-and-security.md), [integrations](../01-architecture/integrations.md), [events](../01-architecture/events-and-realtime.md), [schedulers](../01-architecture/schedulers-and-jobs.md).
